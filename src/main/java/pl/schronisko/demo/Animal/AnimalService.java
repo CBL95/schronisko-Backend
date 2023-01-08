@@ -19,7 +19,6 @@ public class AnimalService {
         this.animalRepository = animalRepository;
     }
 
-
     public List<Animal> getAnimals() {
         return animalRepository.findAll(Sort.by("id"));
     }
@@ -27,9 +26,8 @@ public class AnimalService {
     public void addNewAnimal(Animal animal) {
         Optional<Animal> animalOptional = animalRepository.findAnimalById(animal.getId());
         if (animalOptional.isPresent()){
-            throw new IllegalStateException("id jest już zajęte");
+            throw new IllegalStateException("this id is already taken");
         }
-        //System.out.println(animal);
         animalRepository.save(animal);
     }
 
