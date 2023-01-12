@@ -16,19 +16,19 @@ public class AnimalConfig {
            Animal burek = new Animal(
                     "Burek",
                     "Cat",
-                    "Male",
+                    Sex.MALE,
                     3,
                     "Brown",
-                    "Big"
+                    Size.BIG
             );
 
             Animal reksio = new Animal(
                     "Reksio",
                     "Dog",
-                    "Male",
+                    Sex.FEMALE,
                     2,
                     "White",
-                    "Small"
+                    Size.SMALL
             );
 
             repository.saveAll(

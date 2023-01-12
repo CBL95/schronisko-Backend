@@ -30,16 +30,18 @@ public class Animal {
     private Long id;
     private String name;
     private String category;
-    private String sex;
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
     private Integer age;
     private String color;
-    private String size;
+    @Enumerated(EnumType.STRING)
+    private Size size;
 
     public Animal() {
 
     }
 
-    public Animal(Long id, String name, String category, String sex, Integer age, String color, String size) {
+    public Animal(Long id, String name, String category, Sex sex, Integer age, String color, Size size) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -49,7 +51,7 @@ public class Animal {
         this.size = size;
     }
 
-    public Animal(String name, String category, String sex, Integer age, String color, String size) {
+    public Animal(String name, String category, Sex sex, Integer age, String color, Size size) {
         this.name = name;
         this.category = category;
         this.sex = sex;

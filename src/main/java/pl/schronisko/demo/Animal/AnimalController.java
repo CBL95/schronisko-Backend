@@ -36,10 +36,10 @@ public class AnimalController {
                 @PathVariable("animalId") Long animalId,
         @RequestParam(required = false) String name,
         @RequestParam(required = false) String category,
-        @RequestParam(required = false) String sex,
+        @RequestParam(required = false) Sex sex,
         @RequestParam(required = false) Integer age,
         @RequestParam(required = false) String color,
-        @RequestParam(required = false) String size) {
+        @RequestParam(required = false) Size size) {
                     animalService.updateAnimal(animalId, name, category, sex, age, color, size);
         }
     }

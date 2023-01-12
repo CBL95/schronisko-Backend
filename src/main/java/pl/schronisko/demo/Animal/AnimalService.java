@@ -40,7 +40,7 @@ public class AnimalService {
     }
 
     @Transactional
-    public void updateAnimal(Long animalId, String name, String category, String sex, Integer age, String color, String size){
+    public void updateAnimal(Long animalId, String name, String category, Sex sex, Integer age, String color, Size size){
         Animal animal = animalRepository.findById(animalId).orElseThrow(()->new IllegalStateException(
                 "Animal with id " + animalId + " does not exists"));
         if (name !=null && name.length()>0 && !Objects.equals(animal.getName(),name)
@@ -51,7 +51,7 @@ public class AnimalService {
         ){
             animal.setCategory(category);
         }
-        if (sex !=null && sex.length()>0 && !Objects.equals(animal.getSex(),sex)
+        if (sex !=null  && !Objects.equals(animal.getSex(),sex)
         ){
             animal.setSex(sex);
         }
@@ -63,7 +63,7 @@ public class AnimalService {
         ){
             animal.setColor(color);
         }
-        if (size !=null && size.length()>0 && !Objects.equals(animal.getSize(),size)
+        if (size !=null && !Objects.equals(animal.getSize(),size)
         ){
             animal.setSize(size);
         }
