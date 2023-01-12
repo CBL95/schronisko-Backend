@@ -24,7 +24,7 @@ public class AnimalService {
     }
 
     public void addNewAnimal(Animal animal) {
-        Optional<Animal> animalOptional = animalRepository.findAnimalById(animal.getId());
+        Optional<Animal> animalOptional = animalRepository.findAnimalByName(animal.getName());
         if (animalOptional.isPresent()){
             throw new IllegalStateException("this id is already taken");
         }

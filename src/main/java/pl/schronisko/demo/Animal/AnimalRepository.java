@@ -12,7 +12,7 @@ public interface AnimalRepository
         extends JpaRepository<Animal, Long> {
 
     //@Query("SELECT s from Animal s WHERE s.id =?1")
-    Optional<Animal> findAnimalById(Long id);
+    Optional<Animal> findAnimalByName(String name);
 
 
 }
