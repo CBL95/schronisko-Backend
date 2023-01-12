@@ -1,0 +1,15 @@
+create table animal
+(
+    id       bigint not null
+        primary key,
+    age      integer,
+    category varchar(255),
+    color    varchar(255),
+    name     varchar(255),
+    sex      varchar(255),
+    size     varchar(255)
+);
+
+alter table animal
+    owner to postgres;
+
