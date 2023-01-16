@@ -35,16 +35,15 @@ class AnimalServiceTest {
     }
 
     @Test
-    @Disabled
     void canRegisterNewAnimal() {
         //given
         Animal animal = new Animal(
                 "Doggo",
                 "Dog",
-                "Male",
+                Sex.MALE,
                 4,
                 "Brown",
-                "Big"
+                Size.BIG
         );
         //when
         underTest.addNewAnimal(animal);
