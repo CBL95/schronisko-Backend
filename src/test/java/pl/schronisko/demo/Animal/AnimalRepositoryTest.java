@@ -1,6 +1,5 @@
 package pl.schronisko.demo.Animal;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +7,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.Optional;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 import static org.junit.jupiter.api.Assertions.*;
+
+
 @DataJpaTest
 class AnimalRepositoryTest {
 
@@ -17,17 +18,17 @@ class AnimalRepositoryTest {
     private AnimalRepository underTest;
 
     @Test
-    void itShouldCheckIfAnimalNameExists(){
+    void itShouldCheckIfAnimalNameExists() {
         //given
         String name = "Lucario";
         Animal animal = new Animal(
                 1337L,
                 name,
-                "Dog",
-                Sex.MALE,
+                Category.Pies,
+                Sex.Samiec,
                 4,
                 "Brown",
-                Size.BIG
+                Size.Duży
         );
         underTest.save(animal);
 
@@ -41,7 +42,7 @@ class AnimalRepositoryTest {
     }
 
     @Test
-    void itShouldCheckIfAnimalNameDoesNotExists(){
+    void itShouldCheckIfAnimalNameDoesNotExists() {
         //given
         String name = "Lucario";
 
@@ -53,8 +54,9 @@ class AnimalRepositoryTest {
 
     }
 
+
     @AfterEach
-    void tearDown(){
+    void tearDown() {
         underTest.deleteAll();
     }
 

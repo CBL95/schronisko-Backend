@@ -1,6 +1,8 @@
 package pl.schronisko.demo.Animal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -22,26 +24,26 @@ public class AnimalController {
     }
 
     @PostMapping()
-    public void registerNewAnimal(@RequestBody Animal animal){
+    public void registerNewAnimal(@RequestBody Animal animal) {
         animalService.addNewAnimal(animal);
     }
 
     @DeleteMapping(path = "{animalId}")
-    public void deleteAnimal(@PathVariable("animalId") Long animalId){
+    public void deleteAnimal(@PathVariable("animalId") Long animalId) {
         animalService.deleteAnimal(animalId);
     }
 
-    @PutMapping(path="{animalId}")
-        public void updateAnimal(
-                @PathVariable("animalId") Long animalId,
-        @RequestParam(required = false) String name,
-        @RequestParam(required = false) String category,
-        @RequestParam(required = false) Sex sex,
-        @RequestParam(required = false) Integer age,
-        @RequestParam(required = false) String color,
-        @RequestParam(required = false) Size size) {
-                    animalService.updateAnimal(animalId, name, category, sex, age, color, size);
-        }
+    @PutMapping(path = "{animalId}")
+    public void updateAnimal(
+            @PathVariable("animalId") Long animalId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Category category,
+            @RequestParam(required = false) Sex sex,
+            @RequestParam(required = false) Integer age,
+            @RequestParam(required = false) String color,
+            @RequestParam(required = false) Size size) {
+        animalService.updateAnimal(animalId, name, category, sex, age, color, size);
     }
+}
 
 

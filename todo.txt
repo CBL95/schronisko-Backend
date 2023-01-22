@@ -1,0 +1,34 @@
+Rozwój backendu:
+
+    1. Wyrzucenie enumów dla rozmiaru. Rozmiar jest kwestią umowną i nie powinien być zapisywany słownie. Lepszym
+    podejściem będzie definiowanie wagi zwierzęcia, jest to bardziej przejrzyste i bardziej uniwersalne.
+    2. Dokończenie testów
+        a) dokończenie testów dla serwisu
+        b) zrealizowanie testów dla kontrolera
+        c) ogarnięcie tematu testów integracyjnych i ewentualne ich wykonanie
+        d) ogarnięcie, czy testy pokrywają cały kod (debug -> run with coverage...)
+    3. Obsłużenie wyświetlania obrazków na stronie dla zwierząt, które będą pobierane z foldera na serwerze.
+       Zdjęcia będą dość duże, więc przechowywanie ich w bazie danych będzie nieefektywnym podejściem. Jeżeli
+       zdjęcia byłyby małych rozmiarów, można byłoby rozważyć przechowywanie ich w bazie danych (BLOB -binary large object).
+
+
+Rozwinięcie frontu dla pracowników:
+
+    1. Słownik pracowników. Powinien zawierać podstawowe dane pracownika. Każdy pracownik powinien mieć też
+        przypisaną konkretną rolę.
+    2. Modyfikacja listy wyświetlanych zwierząt. Dodanie opcji sortowania i wyszukiwania.
+    3. Rozszerzenie danych wyświetlanych na liście.
+        a) dodanie daty rejestracji zwierzęcia
+    4. Dodanie archiwum zwierząt.
+        a) dodanie daty
+
+
+Rozwój aplikacji dla gości odwiedzających stronę:
+
+    1. Klient powinien mieć możliwość przeglądania strony jako gość. Wyświetla mu się lista zwierzaków.
+        a) Lista zwierząt wyświetlana jest w formie kafelek ze zdjęciami. Po naciśnięciu kafelka, wyświetlane są
+           szczegóły (do ustalenia, jakie) -> powiązane z punktem 3 rozwój backendu.
+    2. Klient ma możliwość rejestracji na stronie. Rejestracja powinna odbyć się poprzez potwierdzenie adresu email
+    3. Klient po zarejestrowaniu i zweryfikowaniu konta może robić różne rzeczy (do ustalenia)
+
+Rozwój SQL - na chwilę obecną baza tworzona jest sekwencją, trzeba będzie dodać kilka tabel (do ustalenia)

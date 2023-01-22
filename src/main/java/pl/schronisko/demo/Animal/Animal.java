@@ -10,7 +10,6 @@ import javax.persistence.*;
 @ToString
 
 
-
 @Entity
 @Table
 @Builder
@@ -18,7 +17,7 @@ import javax.persistence.*;
 public class Animal {
     @Id
     @SequenceGenerator(
-            name="animal_sequence",
+            name = "animal_sequence",
             sequenceName = "animal_sequence",
             allocationSize = 1
     )
@@ -29,7 +28,8 @@ public class Animal {
 
     private Long id;
     private String name;
-    private String category;
+    @Enumerated(EnumType.STRING)
+    private Category category;
     @Enumerated(EnumType.STRING)
     private Sex sex;
     private Integer age;
@@ -41,7 +41,7 @@ public class Animal {
 
     }
 
-    public Animal(Long id, String name, String category, Sex sex, Integer age, String color, Size size) {
+    public Animal(Long id, String name, Category category, Sex sex, Integer age, String color, Size size) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -51,7 +51,7 @@ public class Animal {
         this.size = size;
     }
 
-    public Animal(String name, String category, Sex sex, Integer age, String color, Size size) {
+    public Animal(String name, Category category, Sex sex, Integer age, String color, Size size) {
         this.name = name;
         this.category = category;
         this.sex = sex;

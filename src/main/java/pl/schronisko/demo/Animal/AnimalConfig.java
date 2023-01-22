@@ -1,9 +1,9 @@
 package pl.schronisko.demo.Animal;
 
+import lombok.Builder;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
@@ -11,28 +11,29 @@ import java.util.List;
 public class AnimalConfig {
 
     @Bean
+    @Builder
     CommandLineRunner commandLineRunner(AnimalRepository repository) {
         return args -> {
-           Animal burek = new Animal(
-                    "Burek",
-                    "Cat",
-                    Sex.MALE,
-                    3,
-                    "Brown",
-                    Size.BIG
-            );
+            Animal reksiotestowy = Animal.builder()
+                    .name("Reksio")
+                    .category(Category.Pies)
+                    .sex(Sex.Samiec)
+                    .age(3)
+                    .color("Biało-bury")
+                    .size(Size.Normalny)
+                    .build();
 
-            Animal reksio = new Animal(
-                    "Reksio",
-                    "Dog",
-                    Sex.FEMALE,
-                    2,
-                    "White",
-                    Size.SMALL
-            );
+            Animal garfieldtestowy = Animal.builder()
+                    .name("Garfield")
+                    .category(Category.Kot)
+                    .sex(Sex.Samiec)
+                    .age(5)
+                    .color("Rudy")
+                    .size(Size.Duży)
+                    .build();
 
             repository.saveAll(
-                    List.of(burek,reksio)
+                    List.of(reksiotestowy, garfieldtestowy)
             );
         };
 
