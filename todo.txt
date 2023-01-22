@@ -10,7 +10,8 @@ Rozwój backendu:
     3. Obsłużenie wyświetlania obrazków na stronie dla zwierząt, które będą pobierane z foldera na serwerze.
        Zdjęcia będą dość duże, więc przechowywanie ich w bazie danych będzie nieefektywnym podejściem. Jeżeli
        zdjęcia byłyby małych rozmiarów, można byłoby rozważyć przechowywanie ich w bazie danych (BLOB -binary large object).
-
+    4. Enumy są niezgodne z konwencją. Należy zmienić ich nazwę na poprzednią (płeć -> MALE / FEMALE, kategoria -> CAT/DOG).
+       Po stronie frontu pewnie trzeba będzie zrobić rzutowanie. Wg. informacji, wartości ENUM są dobre do małych list.
 
 Rozwinięcie frontu dla pracowników:
 
